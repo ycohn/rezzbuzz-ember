@@ -14,11 +14,11 @@ Router.map(function() {
     });
   });
   this.route('buildings', function() {
-    this.route('new');
     this.route('building', {path: ':building_id'}, function() {
+    this.route('new');
       this.route('topics', function() {
-        this.route('new');
         this.route('topic', {path: ':topic_id'});
+        this.route('new');
       });
     });
   });
