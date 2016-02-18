@@ -1,0 +1,16 @@
+{{yield}}
+<form class="form-horizontal" {{action "submit" on="submit"}}>
+  <div class="form-group">
+    <label for="building-name">Name</label>
+    {{input value=building.name class="form-control" id="building-name"}}
+  </div>
+  <div class="form-group">
+    <label for="building-description">Description</label>
+    {{input value=building.description class="form-control" id="building-description"}}
+  </div>
+  <div class="form-group">
+    <label for="building-address">Address</label>
+    {{input value=building.address class="form-control" id="building-address"}}
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
