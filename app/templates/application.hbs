@@ -1,21 +1,25 @@
-<nav class="navbar navbar-default">  
+<nav class="navbar navbar-default">
   <div class="container">
-    
+
 
     <div class="collapse navbar-collapse" id="">
       <ul class="nav navbar-nav">
         <li class="my-nav-item"></li>
+        {{#if session.isAuthenticated}}
+          <li class="my-nav-item"><button {{action "logout"}}{{link-to "Logout" "logout"}}></button></li>
+        {{else}}
+        <li class="my-nav-item">{{link-to "Login" "login"}}</li>
+          {{/if}}
       </ul>
     </div>
   </div>
 </nav>
 
 
-
-
+<div class="container">
 {{outlet}}
-
-<footer class="hidden-xs">  
+</div>
+<footer class="hidden-xs">
     <p class="pull-left">&copy; Copyright 2016. RezzBuzz.</p>
     <p class="pull-right">made with <span class="glyphicon glyphicon-heart-empty"></span> @ <a href="http://flatironschool.com">The Flatiron School</a></p>
 </footer>
