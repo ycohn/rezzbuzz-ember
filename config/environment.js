@@ -20,15 +20,14 @@ module.exports = function(environment) {
   };
 
   if (environment === 'development') {
-    // ENV.APP.LOG_RESOLVER = true;
-    // ENV.APP.LOG_ACTIVE_GENERATION = true;
-    // ENV.APP.LOG_TRANSITIONS = true;
-    // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
-    // ENV.APP.LOG_VIEW_LOOKUPS = true;
-  ENV['simple-auth'] = {
-  authorizer: 'authorizer:devise',
-  crossOriginWhitelist: ['http://localhost:3000']
-};
+    // ENV['simple-auth'] = {
+    //   authorizer: 'simple-auth-authorizer:devise'
+    // }
+
+    // ENV['simple-auth-devise'] = {
+    //   tokenAttributeName: 'token',
+    //   identificationAttributeName: 'email'
+    // }
   }
 
   if (environment === 'test') {
