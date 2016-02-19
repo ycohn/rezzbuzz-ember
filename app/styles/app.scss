@@ -8,12 +8,14 @@
     height: 750px;
     background-size: cover;
     overflow: hidden;
+    display: flex;
+    align-items: center;
 
 }
 
-.jumbotron h1 {
+.jumbotron h1, p {
 
-   font: white!important;
+   color: white;
 }
 /*
 public/assets vs app/styles To add images, fonts, or 
