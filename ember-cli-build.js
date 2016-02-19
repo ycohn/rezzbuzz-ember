@@ -7,7 +7,18 @@ module.exports = function(defaults) {
     // sassOptions: {
     //   includePaths: ['bower_components/bootstrap-sass/scss']
     // }
+    'ember-cli-bootswatch': 'flatly'
   });
+
+  app.import('bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff', {  
+  destDir: 'fonts/bootstrap/'
+});
+
+
+
+
+
+  // ... (documen
 
   // Use `app.import` to add additional libraries to the generated
   // output files.
