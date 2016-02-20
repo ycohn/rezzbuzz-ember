@@ -1,7 +1,7 @@
 @import 'bower_components/bootstrap-sass/assets/stylesheets/bootstrap';
 @import 'bower_components/bootswatch/flatly/bootstrap';
 
-.jumbotron {
+.jumbotron .homepage {
     position: relative;
     background: url('/assets/images/home-page.jpg') center center;
     width: 100%;
@@ -13,9 +13,22 @@
 
 }
 
-.jumbotron h1, p {
+.jumbotron h1, h3, h4, h2, p {
 
    color: white;
+
+}
+
+.jumbotron, .inner-page {
+    position: relative;
+    background: url('/assets/images/home-page.jpg') center center;
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
 }
 /*
 public/assets vs app/styles To add images, fonts, or 
