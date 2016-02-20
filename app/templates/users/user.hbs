@@ -17,9 +17,16 @@
     <div class="col-md-3">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <h3 class="panel-title">Your subscriptions for {{model.building.name}} </h3></div>
+          <h3 class="panel-title">Topics</h3></div>
             <div class="panel-body">
-              Panel content
+              <ul class="list-group">
+                #each model.current_building.topics as |topic|
+                  <a href="#" class="btn btn-primary btn-xs"><li class="list-group-item">topic.name</li></a>
+                  <li class="list-group-item">topic.name</li>
+                  <li class="list-group-item">topic.name</li>
+                  <li class="list-group-item">topic.name</li>
+                /each
+              </ul>
             </div>
         </div>
 
@@ -28,7 +35,12 @@
             <h3 class="panel-title">Select different building</h3>
           </div>
           <div class="panel-body">
-            Panel content
+            <ul class="list-group">
+                {{#each model.buildings as |building|}}
+                  <li class="list-group-item">{{building.name}}</li>
+               
+                {{/each}}
+              </ul>
           </div>
         </div>
   </div>
