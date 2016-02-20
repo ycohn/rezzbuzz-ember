@@ -1,0 +1,4 @@
+<h2>Join an Existing Building </h2>
+{{#each model as |building|}}
+<li>{{#link-to "building" building}}{{building.name}}{{/link-to}}</li>
+{{/each}}
