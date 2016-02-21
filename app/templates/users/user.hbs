@@ -12,32 +12,33 @@
   </div>
 </div>
 
+
 <div class="container">
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class="panel panel-primary">
         <div class="panel-heading">
-          <h3 class="panel-title">Topics</h3></div>
+          <h3 class="panel-title">Topics</h3>
+        </div> 
             <div class="panel-body">
               <ul class="list-group">
-                #each model.current_building.topics as |topic|
-                  <a href="#" class="btn btn-primary btn-xs"><li class="list-group-item">topic.name</li></a>
-                  <li class="list-group-item">topic.name</li>
-                  <li class="list-group-item">topic.name</li>
-                  <li class="list-group-item">topic.name</li>
-                /each
+                  {{#each model.buildings as |building|}}
+                  {{#each building.topics as |topic|}}
+                  <li class="list-group-item">{{topic.title}} <a href="#" class="btn btn-primary btn-xs">Subscribe</a></li> 
+                  {{/each}}
+                  {{/each}}
               </ul>
             </div>
-        </div>
-
+      </div>
+  
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h3 class="panel-title">Select different building</h3>
+            <h3 class="panel-title">Select Other Building</h3>
           </div>
           <div class="panel-body">
             <ul class="list-group">
                 {{#each model.buildings as |building|}}
-                  <li class="list-group-item">{{building.name}}</li>
+                  <li class="list-group-item">{{building.name}}   <a href="#" class="btn btn-primary btn-xs">What's the Buzz?</a></li>
                
                 {{/each}}
               </ul>
@@ -46,7 +47,7 @@
   </div>
 
 
-  <div class="col-md-9">
+  <div class="col-md-8">
     <div class="panel panel-info">
       <div class="panel-heading">
         <h3 class="title text-center">The Buzz</h3>
@@ -64,10 +65,16 @@
               </ul>
             </div>
           </div>
-      </div>
+      
       </div>
     </div>
   </div>
 
+
+ </div>
 {{outlet}}
 </div>
+
+
+
+
