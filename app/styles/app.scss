@@ -1,7 +1,22 @@
 @import 'bower_components/bootstrap-sass/assets/stylesheets/bootstrap';
 @import 'bower_components/bootswatch/flatly/bootstrap';
 
+footer {
+color:navy;
+height: 60px;
+background-color: #f5f5f5;
+align-items: center;
+padding-top:20px;
+padding-left: 100px;
+}
 
+
+
+footer p {
+    
+    color: navy;
+   
+}
 
 .jumbotron.homepage {
     position: relative;
