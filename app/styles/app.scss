@@ -10,7 +10,10 @@ padding-top:20px;
 padding-left: 100px;
 }
 
-
+.list-group-item a.btn.btn-primary.btn-xs {
+    
+    margin-left: 10%;
+}
 
 footer p {
     
@@ -27,6 +30,7 @@ footer p {
     overflow: hidden;
     display: flex;
     align-items: center;
+    margin-bottom: 0px;
 
 }
 
