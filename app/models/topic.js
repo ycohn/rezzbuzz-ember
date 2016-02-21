@@ -7,5 +7,6 @@ export default DS.Model.extend({
   createdAt: DS.attr('date'),
   updatedAt: DS.attr('date'),
   users: DS.hasMany('user'),
-  messages: DS.hasMany('message')
+  messages: DS.hasMany('message'),
+  building: DS.belongsTo('building')
 });

@@ -9,5 +9,5 @@ export default DS.Model.extend({
   createdAt: DS.attr('date'),
   updatedAt: DS.attr('date'),
   users: DS.hasMany('user'),
-  topics: DS.hasMany('topic')
+  topics: DS.hasMany('topic', { async: true })
 });
