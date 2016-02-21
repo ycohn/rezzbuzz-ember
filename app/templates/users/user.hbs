@@ -1,8 +1,80 @@
-This will be an user's show page.  any nested pages will have this content, plus yield their
-own content below in outlet. can also display a component by passing in {{component-name anymodelfromroute=model}}
+{{show-navbar session=model}}
+<br>
+<br>
 
-ember generate component component-name
+<div class="jumbotron jumbotron-fluid inner-page">
+  <div class="container">
+    <h1 class="display-3 text-center">Hi, {{model.firstname}} {{model.lastname}}</h1>
+    <h3 class="lead text-center">What's happening at The{{#each model.buildings as |building|}}
+      {{building.name}}?
+      {{/each}}
+    </h3>
+  </div>
+</div>
 
-https://learn.co/tracks/web-development-immersive-2016/ember/ember-data-crud/components-and-closure-actions
-https://learn.co/tracks/web-development-immersive-2016/ember/ember-data-crud/crud-and-components-lab
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Topics</h3>
+        </div> 
+            <div class="panel-body">
+              <ul class="list-group">
+                  {{#each model.buildings as |building|}}
+                  {{#each building.topics as |topic|}}
+                  <li class="list-group-item">{{topic.title}} <a href="#" class="btn btn-primary btn-xs">Subscribe</a></li> 
+                  {{/each}}
+                  {{/each}}
+              </ul>
+            </div>
+      </div>
+  
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Select Other Building</h3>
+          </div>
+          <div class="panel-body">
+            <ul class="list-group">
+                {{#each model.buildings as |building|}}
+                  <li class="list-group-item">{{building.name}}   <a href="#" class="btn btn-primary btn-xs">What's the Buzz?</a></li>
+               
+                {{/each}}
+              </ul>
+          </div>
+        </div>
+  </div>
+
+
+  <div class="col-md-8">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <h3 class="title text-center">The Buzz</h3>
+      </div>
+      <div class="panel-body">
+        <div class="panel panel-default">
+  <!-- Each subscription and its messages -->
+          <div class="panel-heading title">Maintenance</div>
+            <div class="panel-body">
+              <ul class="list-group">
+                <li class="list-group-item">Message 1</li>
+                <li class="list-group-item">Message 2</li>
+                <li class="list-group-item">Message 3</li>
+                <li class="list-group-item">Message 4</li>
+              </ul>
+            </div>
+          </div>
+      
+      </div>
+    </div>
+  </div>
+
+
+ </div>
 {{outlet}}
+</div>
+
+
+
+
