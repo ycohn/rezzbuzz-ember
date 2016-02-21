@@ -1,0 +1,18 @@
+{{yield}}
+<div class="container">
+  <form class="form-horizontal" {{action "submit" on="submit"}}>
+    <div class="form-group">
+      <label for="topic-title">Title</label>
+      {{input value=topic.title class="form-control" id="topic-title"}}
+    </div>
+    <div class="form-group">
+      <label for="topic-description">Description</label>
+      {{input value=topic.description class="form-control" id="topic-description"}}
+    </div>
+    <div class="form-group">
+      <label for="topic-building">{{params.building_id}}</label>
+      {{input value=topic.description class="form-control" id="topic-description"}}
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+</div>
