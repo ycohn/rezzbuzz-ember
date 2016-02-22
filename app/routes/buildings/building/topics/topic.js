@@ -8,7 +8,7 @@ export default Ember.Route.extend({
     addMessage(newMessage){
       let topic = this.modelFor(this.routeName);
       let message = this.store.createRecord('message', {content: newMessage, topic: topic});
-      newMessage = "";
+      $('.ember-text-field').val('');
       message.save().then((savedMessage) => {
         this.transitionTo('buildings.building.topics.topic', topic);
       }).catch();
