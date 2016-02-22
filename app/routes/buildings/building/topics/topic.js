@@ -13,5 +13,5 @@ export default Ember.Route.extend({
         this.transitionTo('buildings.building.topics.topic', topic);
       }).catch();
     }
-  }
+  } 
 });
