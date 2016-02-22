@@ -1,3 +1,39 @@
+{{show-navbar user=model}}
+<br>
 
-{{model.name}}
-{{model.description}}
+<div class="jumbotron jumbotron-fluid inner-page">
+  <div class="container">
+    <h1 class="display-3 text-center">{{model.name}}</h1>
+    <h3 class="lead text-center"></h3>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="col-md-3">
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <h3 class="text-center">Residents</h3>      
+        </div>
+      <div class="panel-body">
+        <div class="panel panel-default">
+          <ul class="list-group">
+            {{#each model.users as |user|}}
+              <li class="list-group-item">{{user.firstname}}</li>
+            {{/each}}                
+          </ul>
+        </div>
+      </div>
+      </div>
+    </div>
+
+  <div class="col-md-9">
+    <h2 class="text-center primary-text">{{model.name}} is located at {{model.address}}.</h2>
+    <div class="text-center">
+      <br>
+      <button class="btn btn-lg btn-success" {{action 'join'}}>Join Residence</button>
+      <button class="btn btn-lg btn-primary"{{action 'leave'}}>Leave Residence</button>
+    </div>
+  </div>
+</div>
+</div>
