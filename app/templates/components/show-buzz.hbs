@@ -1,0 +1,23 @@
+{{yield}}
+{{#if building}}
+ <div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="title text-center">The Buzz @ {{building.name}}</h3>
+      </div>
+      <div class="panel-body">
+    <div class="panel panel-default">
+  <!-- Each subscription and its messages -->
+        {{#each building.topics as |topic|}}
+          <div class="panel-heading title">{{#link-to "buildings.building.topics.topic" building topic}}{{topic.title}}{{/link-to}}</div>
+            <div class="panel-body">
+            {{#each topic.messages as |message|}}
+              <ul class="list-group">
+                <li class="list-group-item">{{message.content}}</li>
+              </ul>
+            {{/each}}
+            </div>
+          {{/each}}
+          </div>
+         </div>
+        </div>
+{{/if}}

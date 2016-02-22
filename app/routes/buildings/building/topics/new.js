@@ -7,6 +7,7 @@ export default Ember.Route.extend({
   },
   actions: {
     addTopic(){
+      debugger;
       let topic = this.modelFor(this.routeName);
       let building = this.modelFor('buildings.building');
       topic.set("building", building);

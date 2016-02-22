@@ -1,78 +1,49 @@
+
 {{show-navbar session=model user=user}}
+
 <br>
 <br>
 
 <div class="jumbotron jumbotron-fluid inner-page">
   <div class="container">
-    <h1 class="display-3 text-center">Hi, {{model.firstname}} {{model.lastname}}</h1>
-    <h3 class="lead text-center">What's happening at The{{#each model.buildings as |building|}}
-      {{building.name}}?
-      {{/each}}
-    </h3>
+    <h1 class="display-3 text-center">Hey {{model.firstname}}!</h1>
+    <h3 class="lead text-center">Here's what's happening</h3>
   </div>
 </div>
-
+ 
 
 <div class="container">
   <div class="row">
     <div class="col-md-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">Topics</h3>
-        </div> 
-            <div class="panel-body">
-              <ul class="list-group">
-                  {{#each model.buildings as |building|}}
-                  {{#each building.topics as |topic|}}
-                  <li class="list-group-item">{{topic.title}} <a href="#" class="btn btn-primary btn-xs">Subscribe</a></li> 
-                  {{/each}}
-                  {{/each}}
-              </ul>
-            </div>
-      </div>
-  
+    {{showAll-topics building=currentBuilding}}
         <div class="panel panel-primary">
           <div class="panel-heading">
-            <h3 class="panel-title">Select Other Building</h3>
+            <h3 class="panel-title">My Rezzies</h3>
           </div>
           <div class="panel-body">
             <ul class="list-group">
                 {{#each model.buildings as |building|}}
-                  <li class="list-group-item">{{building.name}}   <a href="#" class="btn btn-primary btn-xs">What's the Buzz?</a></li>
-               
+                <li class="list-group-item">
+                  <a href="#" {{action 'showMore' building}}>
+                    {{building.name}}
+                  </a>
+                </li>
+                  
                 {{/each}}
               </ul>
           </div>
         </div>
   </div>
 
-
   <div class="col-md-8">
-    <div class="panel panel-info">
-      <div class="panel-heading">
-        <h3 class="title text-center">The Buzz</h3>
-      </div>
-      <div class="panel-body">
-        <div class="panel panel-default">
-  <!-- Each subscription and its messages -->
-          <div class="panel-heading title">Maintenance</div>
-            <div class="panel-body">
-              <ul class="list-group">
-                <li class="list-group-item">Message 1</li>
-                <li class="list-group-item">Message 2</li>
-                <li class="list-group-item">Message 3</li>
-                <li class="list-group-item">Message 4</li>
-              </ul>
-            </div>
-          </div>
+  {{show-buzz building=currentBuilding}}
+    
       
-      </div>
-    </div>
-  </div>
-
-
- </div>
+    
+   
 {{outlet}}
+</div>
+</div>
 </div>
 
 
