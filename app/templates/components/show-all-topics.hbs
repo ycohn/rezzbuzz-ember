@@ -1,0 +1,15 @@
+{{yield}}
+{{#if building}}
+<div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Topics</h3>
+        </div> 
+            <div class="panel-body">
+              <ul class="list-group">
+                  {{#each building.topics as |topic|}}
+                  <li class="list-group-item">{{topic.title}} <a href="#" class="btn btn-primary btn-xs">Subscribe</a></li> 
+                  {{/each}}
+              </ul>
+            </div>
+         </div>
+{{/if}}
