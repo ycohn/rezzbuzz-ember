@@ -1,5 +1,10 @@
-{{outlet}}
+<br>
+<br>
 <div class="container">
 <h1>{{model.title}}</h1>
 <p style="color:blue;">{{model.description}}</p>
+{{#each model.messages as |message|}}
+<p style="color:blue;">{{message.content}}</p>
+{{/each}}
 </div>
+{{create-message onSubmit="addMessage"}}
