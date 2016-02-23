@@ -9,15 +9,13 @@
         <li>{{#link-to "users" user}}Dashboard{{/link-to}}</li>
         <li>{{#link-to "buildings"}}Profile{{/link-to}}</li>
         <li>{{#link-to "buildings"}}Residences{{/link-to}}</li>
-      
-        <!-- {{#if session.isAuthenticated}} -->
-          <!-- <li class="my-nav-item"><button {{action "logout"}}{{link-to "Logout" "logout"}}></button></li> -->
-        <!-- {{else}} -->
-        <!-- <li class="my-nav-item">{{link-to "Login" "login"}}</li> -->
-          <!-- {{/if}} -->
+
+        {{#if session.isAuthenticated}}
+        <li>{{#link-to "logout"}}Logout{{/link-to}}</li>
+        {{else}}
+        <li>{{#link-to "login"}}Login{{/link-to}}</li>
+        {{/if}}
       </ul>
     </div>
   </div>
 </nav>
-
-
