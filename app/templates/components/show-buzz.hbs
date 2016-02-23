@@ -8,13 +8,14 @@
     <div class="panel panel-default">
   <!-- Each subscription and its messages -->
         {{#each building.topics as |topic|}}
-          <div class="panel-heading title">{{#link-to "buildings.building.topics.topic" building topic}}{{topic.title}}{{/link-to}}</div>
+          <div class="panel-heading title"><h4>{{#link-to "buildings.building.topics.topic" building topic}}{{topic.title}}{{/link-to}}</h4><h5><strong>Here's the latest</strong></h5></div>
             <div class="panel-body">
-            {{#each topic.messages as |message|}}
+            {{!-- {{#each topic.messages as |message|}} --}}
               <ul class="list-group">
-                <li class="list-group-item">{{message.content}}</li>
+                {{limit-messages topic.messages}}
+                {{!-- <li class="list-group-item">{{message.content}}</li> --}}
               </ul>
-            {{/each}}
+           {{!--  {{/each}} --}}
             </div>
           {{/each}}
           </div>
