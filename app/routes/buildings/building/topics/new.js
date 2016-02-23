@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
-export default Ember.Route.extend({
+export default Ember.Route.extend(AuthenticatedRouteMixin, {
+  session: Ember.inject.service('session'),
 
   model(){
     return this.store.createRecord("topic");

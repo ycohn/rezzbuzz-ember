@@ -8,7 +8,7 @@ export default Ember.Controller.extend({
     createUser(){
       let user = this.model;
       user.save().then((savedUser) => {
-        this.transitionTo('users.user', savedUser);
+        this.transitionToRoute('login');
       }).catch();
     }
   }

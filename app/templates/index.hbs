@@ -5,10 +5,12 @@
         <div class= "text-center">
         <div class="">
 
-   
-      {{#link-to "users.new" class="btn btn-lg btn-success"}} Sign Up {{/link-to}}
- 
-      {{#link-to "login" class="btn  btn-success btn-lg"}} Log In {{/link-to}}
+      {{#if session.isAuthenticated}}
+        <li>{{#link-to "logout"}}Logout{{/link-to}}</li>
+      {{else}}
+        {{#link-to "users.new" class="btn btn-lg btn-success"}} Sign Up {{/link-to}}
+        {{#link-to "login" class="btn  btn-success btn-lg"}} Log In {{/link-to}}
+      {{/if}}
 
       </div>
       </div>

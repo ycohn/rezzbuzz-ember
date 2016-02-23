@@ -30,6 +30,12 @@
               </div>
             </div>
             <div class="form-group">
+              <label for="inputPassword" class="col-lg-3 control-label form-text">Confirm Password</label>
+              <div class="col-lg-9">
+                {{input value=user.passwordConfirmation type="password" class="form-control input-lg" placeholder="Confirm password" id="user-password-confirmation"}}
+              </div>
+            </div>
+            <div class="form-group">
              <label for="textArea" class="col-lg-3 control-label form-text">Bio</label>
              <div class="col-lg-9">
                {{textarea input class="form-control input-lg" value=user.bio placeholder="Tell us about yourself"}}
