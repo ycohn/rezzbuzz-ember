@@ -9,24 +9,31 @@
 </div>
 
 <div class="row">
-  <div class="col-md-10 col-md-offset-2">
+  <div class="col-md-10 col-md-offset-1">
       <div class="panel panel-info">
         <div class="panel-heading">
-          <h3 class="text-center">Messages</h3>      
+          <h3 class="text-center">Here's the BUZZ about {{model.title}}</h3>      
         </div>
       <div class="panel-body">
         <div class="panel panel-default">
           <ul class="list-group">
+            {{#if model.messages}}
             {{#each model.messages as |message|}}
-              <li class="list-group-item">{{message.content}}</li>
-            {{/each}}                
+              <li class="list-group-item">{{message.content}}
+                Posted by {{message.user.firstname}} on {{message.createdAt}}
+
+              </li>
+            {{/each}}
+            {{else}} 
+            <li class="list-group-item">There are no messages in this topic yet.  Add one below.</li> 
+            {{/if}}               
           </ul>
         </div>
       </div>
     </div>
 
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-md-6 col-md-offset-3">
 
     {{create-message onSubmit="addMessage"}}
     </div>
@@ -36,5 +43,10 @@
 </div>
 <br>
 <br>
+
+
+
+
+
 
 
