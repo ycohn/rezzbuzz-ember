@@ -7,9 +7,11 @@
             <div class="panel-body">
               <ul class="list-group">
                   {{#each building.topics as |topic|}}
-                  <li class="list-group-item">{{topic.title}} <a href="#" class="btn btn-primary btn-xs">Subscribe</a></li> 
+                  <li class="list-group-item">{{topic.title}} <form {{action 'subscribe' on="submit"}}> <label for="subscription">{{input type="hidden" value=topic.id}}</label><button type="submit" class="btn btn-primary btn-xs pull-right">Subscribe</button></form></li> 
                   {{/each}}
               </ul>
             </div>
          </div>
 {{/if}}
+
+
