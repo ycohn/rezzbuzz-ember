@@ -12,5 +12,4 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
         this.get('session').invalidate();
       }
     }
-  }
 });
