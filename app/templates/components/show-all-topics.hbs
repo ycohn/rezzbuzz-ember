@@ -1,0 +1,17 @@
+{{yield}}
+{{#if building}}
+<div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Topics</h3>
+        </div> 
+            <div class="panel-body">
+              <ul class="list-group">
+                  {{#each building.topics as |topic|}}
+                  <li class="list-group-item">{{topic.title}} <form {{action 'subscribe' on="submit"}}> <label for="subscription">{{input type="hidden" value=topic.id}}</label><button type="submit" class="btn btn-primary btn-xs pull-right">Subscribe</button></form></li> 
+                  {{/each}}
+              </ul>
+            </div>
+         </div>
+{{/if}}
+
+

@@ -16,9 +16,11 @@
     "bootswatch": "^3.3.5",
     "active-model-adapter": "^2.1.1",
     "ember-simple-auth": "0.8.0"
-
   },
   "devDependencies": {
     "bootstrap-sass": "^3.3.6"
+  },
+  "resolutions": {
+    "ember": "2.3.1"
   }
 }

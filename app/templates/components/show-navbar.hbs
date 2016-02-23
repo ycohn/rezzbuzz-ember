@@ -3,10 +3,10 @@
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="">
       <ul class="nav navbar-nav">
-        <a class="navbar-brand" href="#">RezzBuzz</a>
+        <li>{{#link-to "users.user" user class="navbar-brand"}}RezzBuzz{{/link-to}}</li>
       </ul>
       <ul class=" nav navbar-nav navbar-right">
-        <li>{{#link-to "users" user}}Dashboard{{/link-to}}</li>
+        <li>{{#link-to "users.user" user}}Dashboard{{/link-to}}</li>
         <li>{{#link-to "buildings"}}Profile{{/link-to}}</li>
         <li>{{#link-to "buildings"}}Residences{{/link-to}}</li>
 

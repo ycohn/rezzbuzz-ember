@@ -1,22 +1,37 @@
-{{yield}}
-
+{{show-navbar session=model}}
 <br>
-<br>
-<br>
-<br>
-
-
-<div class="dropdown">
-  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-    All Buildings
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-    {{#each model.buildings as |building| }}
-      <li>{{#link-to "buildings" building}}{{building.name}}{{/link-to}}</li>
-    {{/each}}
-  </ul>
+<div class="jumbotron jumbotron-fluid inner-page">
+  <div class="container">
+    <h1 class="display-3 text-center">All Buildings</h1>
+    <h3 class="lead text-center"></h3>
+  </div>
 </div>
 
+  <div class="row">
+    <div class="col-md-12">
 
+  
+        {{#each buildings as |building|}}
+         <div class="col-md-3">
+         <div class="panel panel-info">
+      <div class="panel-heading">
 
+        <h3 class="text-center">{{building.name}}</h3>      
+      </div>
+      <div class="panel-body">
+        <div class="panel panel-default">
+            
+            
+              <ul class="list-group">
+                <li class="list-group-item">Location: {{building.address}}</li>
+                <li class="list-group-item">Description: {{building.description}}</li>
+                 <li class="list-group-item align-center">{{#link-to "buildings.building" building class="btn btn-primary btn-xs"}}Details{{/link-to}}</li> 
+                 
+              </ul>
+      </div>
+    </div>
+  </div>
+ </div>
+ {{/each}}
+</div>
+</div>
