@@ -12,14 +12,14 @@
     <div class="col-md-3">
       <div class="panel panel-info">
         <div class="panel-heading">
-          <h3 class="text-center">Residents</h3>      
+          <h3 class="text-center">Residents</h3>
         </div>
       <div class="panel-body">
         <div class="panel panel-default">
           <ul class="list-group">
             {{#each building.users as |user|}}
               <li class="list-group-item">{{user.firstname}}</li>
-            {{/each}}                
+            {{/each}}
           </ul>
         </div>
       </div>
@@ -30,13 +30,11 @@
     <h2 class="text-center primary-text">{{building.name}} is located at: <br><br> {{building.address}}.</h2>
     <div class="text-center">
       <br>
-      <button class="btn btn-lg btn-success" {{action 'join'}}>Join Residence</button>
-      <button class="btn btn-lg btn-primary"{{action 'leave'}}>Leave Residence</button>
+      <button class="btn btn-lg btn-success" {{action 'join' building}}>Join Residence</button>
+      <button class="btn btn-lg btn-primary"{{action 'leave' building}}>Leave Residence</button>
     </div>
   </div>
 </div>
 </div>
 <br>
 <br>
-
-

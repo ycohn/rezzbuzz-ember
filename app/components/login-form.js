@@ -7,7 +7,6 @@ export default Ember.Component.extend({
   session: service('session'),
   store: service("store"),
 
-
   actions: {
     authenticate() {
      let { identification, password } = this.getProperties('identification', 'password');
