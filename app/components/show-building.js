@@ -1,9 +1,16 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  session: Ember.inject.service('session'),
   actions: {
-    submit(){
+    submit() {
       this.sendAction('onSubmit');
+    },
+    join(building){
+      this.sendAction('onJoin', building);
+    },
+    leave(building){
+      this.sendAction('onLeave', building);
     }
   }
 });
