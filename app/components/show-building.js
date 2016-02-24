@@ -11,6 +11,9 @@ export default Ember.Component.extend({
     },
     leave(building){
       this.sendAction('onLeave', building);
+    },
+    newTopic(building){
+      this.sendAction('onNewTopic', building);
     }
   }
 });
