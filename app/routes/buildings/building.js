@@ -9,10 +9,9 @@ export default Ember.Route.extend({
   actions: {
     joinABuilding(currentBuilding){
       let building = this.modelFor(this.routeName);
-      debugger;
-      let new_user_building = this.store.createRecord("UserBuilding", {building: currentBuilding});
-      new_user_building.save().then((user) => {
-        debugger;
+      let newUserBuilding = this.store.createRecord("UserBuilding", {building: currentBuilding});
+      newUserBuilding.save().then((userBuilding) => {
+        let user = userBuilding._internalModel._data.userId;
         this.transitionTo('users.user', user);
       }).catch();
     }
