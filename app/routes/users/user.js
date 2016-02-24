@@ -10,6 +10,13 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
     actions: {
       logout() {
         this.get('session').invalidate();
+      },
+      addSubscription(topic){
+        let user = this.modelFor(this.routeName);
+        let subscription = this.store.createRecord('subscription', {topic: topic, user: user});
+        subscription.save().then((savedSubscription) =>{
+          this.transitionTo('users.user', user);
+        }).catch();
       }
     }
 });
