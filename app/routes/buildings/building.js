@@ -14,6 +14,9 @@ export default Ember.Route.extend({
         let user = userBuilding._internalModel._data.userId;
         this.transitionTo('users.user', user);
       }).catch();
+    },
+    addATopic(building){
+      this.transitionTo("buildings.building.topics.new", building);
     }
   }
 
