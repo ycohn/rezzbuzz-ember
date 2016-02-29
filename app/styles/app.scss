@@ -4,7 +4,7 @@
 
 footer {
 color:navy;
-height: 60px;
+height: 80px;
 background-color: #f5f5f5;
 align-items: center;
 padding-top:20px;
@@ -16,14 +16,14 @@ width: 100%
 }
 
 .list-group-item a.btn.btn-primary.btn-xs {
-    
+
     margin-left: 10%;
 }
 
 footer p {
-    
+
     color: navy;
-   
+
 }
 
 .jumbotron.homepage {
@@ -63,10 +63,13 @@ footer p {
 label.form-text{
   font-size: 1.3em;
 }
- 
+
 
  .primary-text {
 
  color: navy;
  }
 
+ .white-text {
+   color: white;
+ }

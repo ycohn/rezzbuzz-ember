@@ -9,6 +9,11 @@ export default Ember.Controller.extend({
         this.set("currentUser", user);
       })
     }
-  }.on('init')
+  }.on('init'),
+  actions: {
+    invalidateSession(){
+      this.get('session').invalidate();
+    }
+  }
 
 });
