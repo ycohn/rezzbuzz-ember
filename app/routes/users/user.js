@@ -5,6 +5,7 @@ const { service } = Ember.inject;
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
     model(params){
        return this.store.findRecord("user", params.user_id);
+       model.refresh();
     },
     session: Ember.inject.service('session'),
     actions: {

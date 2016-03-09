@@ -27,8 +27,11 @@ export default Ember.Route.extend({
     }, 
     leaveABuilding(currentBuilding){
       let building = this.currentModel;
-        return this.get('ajax').del(`/user_buildings/${building.get('id')}/destroy`);
+      return this.get('ajax').del(`/user_buildings/${building.get('id')}/destroy`).then((userNow) => {
+        debugger;
+        let user = userNow.user.id;
         this.transitionTo('users.user', user);
+      }).catch();
     } 
   }
 });
