@@ -1,7 +1,27 @@
-
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="">
+      <ul class="nav navbar-nav">
+        <li>{{#link-to "users.user" user class="navbar-brand"}}RezzBuzz{{/link-to}}</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>{{#link-to "users.user" currentUser}}Dashboard{{/link-to}}</li>
+        <li>{{#link-to "buildings"}}Residences{{/link-to}}</li>
+        {{#if session.isAuthenticated}}
+        <li>{{#link-to "logout"}}Logout{{/link-to}}</li>
+        {{else}}
+        <li>{{#link-to "login"}}Login{{/link-to}}</li>
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>
 {{outlet}}
 <footer class="">
 <div class="container row footer-row">
-    <p class="text-center"><button class="btn btn-sm btn-default"{{action 'invalidateSession' building}}>Logout</button>&copy; 2016, RezzBuzz.  Made with <span class="glyphicon glyphicon-heart"></span> at <a href="http://flatironschool.com">The Flatiron School</a></p>
+    <p class="text-center">&copy; 2016, RezzBuzz.  Made with <span class="glyphicon glyphicon-heart"></span> at <a href="http://flatironschool.com">The Flatiron School</a></p>
 </div>
 </footer>
+
+
+
