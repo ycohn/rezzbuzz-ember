@@ -6,6 +6,13 @@ export default Ember.Route.extend({
   },
   current_user: null,
   session: Ember.inject.service('session'),
+    updateCurrentUser: function () {
+    if (this.get("session.isAuthenticated")){
+      this.get('store').findRecord('user', 'me').then((user) => {
+        this.set("currentUser", user);
+      })
+    }},
+  ajax: Ember.inject.service(),
   actions: {
     joinABuilding(currentBuilding){
       let building = this.modelFor(this.routeName);
@@ -17,7 +24,11 @@ export default Ember.Route.extend({
     },
     addATopic(building){
       this.transitionTo("buildings.building.topics.new", building);
-    }
+    }, 
+    leaveABuilding(currentBuilding){
+      let building = this.currentModel;
+        return this.get('ajax').del(`/user_buildings/${building.get('id')}/destroy`);
+        this.transitionTo('users.user', user);
+    } 
   }
-
 });
